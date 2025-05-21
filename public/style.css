@@ -1,0 +1,320 @@
+/* Variables para colores y fuentes */
+:root {
+    --color-primario: #007bff; /* Azul vibrante */
+    --color-secundario: #f8f9fa; /* Gris claro para fondos */
+    --color-texto-oscuro: #343a40; /* Negro casi para texto */
+    --color-texto-claro: #ffffff; /* Blanco para texto */
+    --color-acento: #28a745; /* Verde para botones o enlaces importantes */
+    --fuente-principal: 'Arial', sans-serif;
+    --fuente-titulo: 'Helvetica Neue', sans-serif;
+}
+
+/* Estilos Generales */
+body {
+    font-family: var(--fuente-principal);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-secundario);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-family: var(--fuente-titulo);
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.2); /* Fondo semi-transparente para la nav */
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-acento);
+}
+
+/* Secciones Generales */
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section h2 {
+    font-family: var(--fuente-titulo);
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-primario);
+    font-size: 2.5em;
+}
+
+/* Sección Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skill-item {
+    background-color: var(--color-texto-claro);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: bold;
+    cursor: pointer; /* Indica que es clickeable */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    background-color: #e9ecef; /* Un gris más claro al pasar el ratón */
+}
+
+/* Sección Portafolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--color-texto-claro);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding-bottom: 20px; /* Espacio para el botón/enlace */
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    color: var(--color-primario);
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+.project-card p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    display: inline-block;
+    background-color: var(--color-acento);
+    color: var(--color-texto-claro);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.project-card a:hover {
+    background-color: #218838; /* Un verde un poco más oscuro */
+}
+
+/* Sección Contacto */
+#contacto ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#contacto ul li {
+    margin-bottom: 10px;
+}
+
+#contacto ul li a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#contacto ul li a:hover {
+    color: var(--color-acento);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-texto-oscuro);
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Permanece en la misma posición al hacer scroll */
+    z-index: 100; /* Se superpone a todo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita scroll si el contenido es muy largo */
+    background-color: rgba(0,0,0,0.6); /* Fondo semi-transparente oscuro */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    opacity: 0; /* Inicialmente transparente para la animación */
+    transition: opacity 0.3s ease-in-out; /* Transición suave para la opacidad */
+}
+
+.modal.show {
+    display: flex; /* Muestra el modal como flexbox para centrar */
+    opacity: 1; /* Hace el modal visible */
+}
+
+.modal-content {
+    background-color: var(--color-texto-claro);
+    margin: auto; /* Centra el contenido */
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%; /* Ancho del contenido del modal */
+    max-width: 500px; /* Ancho máximo para que no sea demasiado grande */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    transform: translateY(-50px); /* Inicialmente un poco hacia arriba para animación */
+    opacity: 0; /* Inicialmente transparente para animación */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0); /* Vuelve a su posición original */
+    opacity: 1; /* Se hace visible */
+}
+
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--color-primario);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalSkillTitle {
+    color: var(--color-primario);
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+#modalSkillDescription {
+    font-size: 1.1em;
+    color: var(--color-texto-oscuro);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .skills-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+}
